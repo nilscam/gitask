@@ -4,8 +4,8 @@
       <Header></Header>
 
       <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+        <router-link to="/worker">Worker</router-link> |
+        <router-link to="/manager">Manager</router-link>
       </div>
       <router-view/>
     </v-app>
@@ -31,6 +31,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /*margin-top: 60px;*/
+  margin-top: 60px;
 }
 </style>
