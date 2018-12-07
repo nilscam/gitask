@@ -1,9 +1,22 @@
 const randomElement = (arr = []) => {
-  return arr[Math.floor(Math.random() * arr.length)];
+  return arr[Math.floor(Math.random() * arr.length)]
 };
 
 const kebab =  (str) => {
-  return (str || '').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+  return (str || '').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+};
+
+const randomUsersPictures = (nb) => {
+  var list = []
+  let genderList = ['men', 'women']
+
+  for (let i = 0; i < nb; i++) {
+    let gender = genderList[Math.round(Math.random())]
+    let number = Math.floor(Math.random()*70)
+
+    list.append(`https://randomuser.me/api/portraits/${gender}/${number}.jpg`)
+  }
+  return list
 };
 
 const toggleFullScreen = () => {
