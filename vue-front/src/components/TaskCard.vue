@@ -9,7 +9,8 @@
         </h5>
       </div>
       <div style="flex: 1;"></div>
-      <img :src="computeTrash" height="18" alt="delete task" class="delete-logo">
+      <img :src="computeTrash" height="18" alt="Delete" class="delete-logo" data-toggle="modal" data-target="#delete-task">
+      <modal-confirmation @confirm="deleteTask" id="delete-task"/>
     </div>
 
     <div data-toggle="collapse" :href="`#${id}`" aria-expanded="true" :aria-controls="id" :id="`heading-${id}`" class="card-body text-left">
@@ -42,10 +43,14 @@
 
 <script>
 import Trash from "../assets/waste-bin.svg";
+import ModalConfirmation from "./ModalConfirmation";
 
 export default {
   props: {
     id: String
+  },
+  components: {
+    ModalConfirmation
   },
   data: () => ({
     hidden: true
@@ -54,6 +59,11 @@ export default {
     computeTrash () {
       // return Computer ? idea
       return Trash;
+    }
+  },
+  methods: {
+    deleteTask() {
+      console.log('delete');
     }
   }
 }
@@ -85,6 +95,7 @@ export default {
 
 }
 .delete-logo {
+  cursor: pointer;
   position: relative;
   top: 5px;
   right: 10px;
