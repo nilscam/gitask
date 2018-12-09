@@ -5,7 +5,7 @@
     <div class="my-card-header">
       <div class="info-header">
         <h5 class="position-absolute">
-          <span :class="`badge ${hidden ? 'badge-secondary' : 'badge-success'}`">{{hidden ? 'Hidden' : 'Visible'}}</span>
+          <span :class="`badge ${data.visible ? 'badge-secondary' : 'badge-success'}`">{{data.visible ? 'Hidden' : 'Visible'}}</span>
         </h5>
       </div>
       <div style="flex: 1;"></div>
@@ -13,15 +13,15 @@
       <modal-confirmation @confirm="deleteTask" id="delete-task"/>
     </div>
 
-    <div data-toggle="collapse" :href="`#${id}`" aria-expanded="true" :aria-controls="id" :id="`heading-${id}`" class="card-body text-left">
+    <div data-toggle="collapse" :href="`#${data.id}`" aria-expanded="true" :aria-controls="data.id" :id="`heading-${data.id}`" class="card-body text-left">
       <div class="my-card-header">
         <div class="my-card-header-left">
-          <h5 class="card-title">Fix front vueJs</h5>
-          <h5 class="card-subtitle mb-2 text-muted">Vuejs</h5>
+          <h5 class="card-title">{{ data.title }}</h5>
+          <h5 class="card-subtitle mb-2 text-muted">{{ data.langage }}</h5>
         </div>
         <div class="my-card-header-right">
-          <h4><span class="badge badge-pill badge-success">10,00$</span></h4>
-          <h6><span class="badge badge-light">commit 5ff0dd0fe59</span></h6>
+          <h4><span class="badge badge-pill badge-success">{{ computePrice }}$</span></h4>
+          <h6><span class="badge badge-light">commit {{ data.commit }}</span></h6>
         </div>
       </div>
 
@@ -29,11 +29,11 @@
     </div>
 
     <!-- Hidden part -->
-    <div :id="id" class="collapse" :aria-labelledby="`heading-${id}`">
+    <div :id="data.id" class="collapse" :aria-labelledby="`heading-${data.id}`">
       <div class="card-body">
-          <span class="d-block">Increment the current Version of erer version to 2.2 for compatible rerz dsfsdfs</span>
+          <span class="d-block">{{ data.desc }}</span>
           <div class="mt-3">
-            <button @click="hidden = !hidden" type="button" :class="`btn ${hidden ? 'btn-outline-success' : 'btn-outline-secondary'}`">{{hidden ? 'Publish' : 'Hide'}}</button>
+            <button @click="data.visible = !data.visible" type="button" :class="`btn ${data.visible ? 'btn-outline-success' : 'btn-outline-secondary'}`">{{data.visible ? 'Publish' : 'Hide'}}</button>
           </div>
       </div>
     </div>
@@ -47,23 +47,23 @@ import ModalConfirmation from "./ModalConfirmation";
 
 export default {
   props: {
-    id: String
+    data: Object
   },
   components: {
     ModalConfirmation
   },
-  data: () => ({
-    hidden: true
-  }),
   computed: {
     computeTrash () {
       // return Computer ? idea
       return Trash;
+    },
+    computePrice () {
+      return this.data.amount.toFixed(2)
     }
   },
   methods: {
     deleteTask() {
-      console.log('delete');
+      this.$emit('delete')
     }
   }
 }

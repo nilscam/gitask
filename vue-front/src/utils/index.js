@@ -6,19 +6,6 @@ const kebab =  (str) => {
   return (str || '').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
 };
 
-const randomUsersPictures = (nb) => {
-  var list = []
-  let genderList = ['men', 'women']
-
-  for (let i = 0; i < nb; i++) {
-    let gender = genderList[Math.round(Math.random())]
-    let number = Math.floor(Math.random()*70)
-
-    list.append(`https://randomuser.me/api/portraits/${gender}/${number}.jpg`)
-  }
-  return list
-};
-
 const toggleFullScreen = () => {
   let doc = window.document;
   let docEl = doc.documentElement;
@@ -34,8 +21,28 @@ const toggleFullScreen = () => {
   }
 };
 
+const randomUsersPictures = (nb) => {
+  var list = []
+  let genderList = ['men', 'women']
+
+  for (let i = 0; i < nb; i++) {
+    let gender = genderList[Math.round(Math.random())]
+    let number = Math.floor(Math.random()*70)
+
+    list.append(`https://randomuser.me/api/portraits/${gender}/${number}.jpg`)
+  }
+  return list
+};
+
+
+const idGen = () => {
+  return '_' + Math.random().toString(36).substr(2, 9);
+};
+
 export default {
   randomElement,
   toggleFullScreen,
-  kebab
+  kebab,
+  randomUsersPictures,
+  idGen
 };
