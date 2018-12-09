@@ -4,11 +4,14 @@
     <!-- Visible part -->
     <div class="my-card-header">
       <div class="info-header">
-        <span class="badge badge-secondary">Hidden</span>
+        <h5 class="position-absolute">
+          <span :class="`badge ${hidden ? 'badge-secondary' : 'badge-success'}`">{{hidden ? 'Hidden' : 'Visible'}}</span>
+        </h5>
       </div>
       <div style="flex: 1;"></div>
       <img :src="computeTrash" height="18" alt="delete task" class="delete-logo">
     </div>
+
     <div data-toggle="collapse" :href="`#${id}`" aria-expanded="true" :aria-controls="id" :id="`heading-${id}`" class="card-body text-left">
       <div class="my-card-header">
         <div class="my-card-header-left">
@@ -27,7 +30,10 @@
     <!-- Hidden part -->
     <div :id="id" class="collapse" :aria-labelledby="`heading-${id}`">
       <div class="card-body">
-          Increment the current Version of erer version to 2.2 for compatible rerz dsfsdfs
+          <span class="d-block">Increment the current Version of erer version to 2.2 for compatible rerz dsfsdfs</span>
+          <div class="mt-3">
+            <button @click="hidden = !hidden" type="button" :class="`btn ${hidden ? 'btn-outline-success' : 'btn-outline-secondary'}`">{{hidden ? 'Publish' : 'Hide'}}</button>
+          </div>
       </div>
     </div>
 
@@ -41,6 +47,9 @@ export default {
   props: {
     id: String
   },
+  data: () => ({
+    hidden: true
+  }),
   computed: {
     computeTrash () {
       // return Computer ? idea
@@ -70,9 +79,8 @@ export default {
 
 
 .info-header {
-  border-radius: 20px;
   position: relative;
-  top: 5px;
+  top: 10px;
   left: 10px;
 
 }
