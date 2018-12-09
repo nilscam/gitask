@@ -2,25 +2,62 @@
   <div class="manager">
     <h1>Manager</h1>
 
-    <v-container grid-list-xl>
-    <v-layout row>
-      <v-flex>
-        <v-card dark color="primary">
-          <v-card-text>todo</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex>
-        <v-card dark color="secondary">
-          <v-card-text>working on</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex>
-        <v-card dark color="accent">
-          <v-card-text>done</v-card-text>
-        </v-card>
-      </v-flex>
-    </v-layout>
-  </v-container>
+    <div class="container">
+      <div class="row">
+        <button type="button" class="col-auto mr-auto btn btn-success">+ Create Task</button>
+        <button type="button" class="col-auto btn btn-danger">Boutton au cas ou</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-around">
+
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <h3><span class="badge badge-pill badge-primary">Waiting</span></h3>
+            </div>
+            <div class="card-body">
+              <ul class="list-group" id="waiting">
+                <task-card id="alpha"/>
+                <task-card id="beta"/>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="col-4">
+          <h3><span class="badge badge-pill badge-warning">In Progress</span></h3>
+        </div>
+
+        <div class="col-4">
+          <h3><span class="badge badge-pill badge-success">Done</span></h3>
+        </div>
+
+      </div>
+    </div>
 
   </div>
 </template>
+
+<script>
+import TaskCard from '../components/TaskCard'
+
+export default {
+  components: {
+    TaskCard
+  }
+}
+
+</script>
+
+<style scoped>
+.task {
+  margin: 10px 0;
+  border-radius: 2px;
+}
+</style>

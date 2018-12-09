@@ -64,7 +64,7 @@
 
 <script>
 import NotificationList from './NotificationList';
-import Idea from "../assets/idea.svg";
+//import Idea from "../assets/idea.svg";
 import Computer from "../assets/computer.svg";
 
 export default {
@@ -78,6 +78,7 @@ export default {
         href: '#',
         title: 'Profile',
         click: (e) => {
+          // eslint-disable-next-line
           console.log(e);
         }
       },
@@ -86,6 +87,7 @@ export default {
         href: '#',
         title: 'Settings',
         click: (e) => {
+          // eslint-disable-next-line
           console.log(e);
         }
       },
@@ -94,6 +96,7 @@ export default {
         href: '#',
         title: 'Logout',
         click: (e) => {
+          // eslint-disable-next-line
           console.log(e);
           //window.getApp.$emit('APP_LOGOUT');
         }
@@ -108,6 +111,7 @@ export default {
   },
   methods: {
     cashMoney() {
+      // eslint-disable-next-line
       console.log('cash')
       //router redirect
     }
