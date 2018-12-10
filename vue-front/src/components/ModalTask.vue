@@ -23,9 +23,9 @@
           <div class="container-fluid">
             <div class="row">
               <div class="offset-lg-1 col-lg-3">
-                <span class="taskMembers">Members</span><br>
-                <img :src="randomUsers[0]" height="32" width="32">&nbsp;
-                <img :src="randomUsers[1]" height="32" width="32">
+                <span class="taskMembers">Workers</span><br>
+                <img :src="randomUsers[0]" height="32" width="32" style="border-radius: 50%;">&nbsp;
+                <img :src="randomUsers[1]" height="32" width="32" style="border-radius: 50%;">
               </div>
               <div class="col-lg-2">
                 <span class="taskLimit">Limit</span><br>
@@ -56,7 +56,7 @@
               </div>
               <div class="col-lg-11">
                 <span class="taskDescription">Description</span><br>
-                <span class="taskDescriptionExample">I am trying to make my python script very user friendly, so I like to write some sort of help for it. What is your advise for this? I could just put in some logic that if the user passed help as a paramater to the script, they get help. Is there a best practise or convention for this?</span>
+                <span class="taskDescriptionExample">{{data.desc}}</span>
               </div>
             </div>
           </div>
