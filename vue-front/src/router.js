@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Worker from './views/Worker.vue'
-import Manager from './views/Manager.vue'
 
 Vue.use(Router)
 
@@ -26,7 +24,12 @@ export default new Router({
     {
       path: '/manager',
       name: 'manager',
-      component: () => import('./views/Manager.vue')
+      component: () => import('./views/Manager.vue'),
+    },
+    {
+      path: '/dashboard/:project',
+      name: 'dashboard',
+      component: () => import('./views/Dashboard.vue')
     }
   ]
 })
