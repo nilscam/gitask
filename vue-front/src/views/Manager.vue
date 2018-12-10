@@ -1,7 +1,5 @@
 <template>
   <div class="manager">
-    <h1>Manager</h1>
-
     <div class="container">
       <div class="row">
         <button type="button" class="col-auto mr-auto btn btn-success">+ Create Task</button>
@@ -13,7 +11,7 @@
       <div class="row justify-content-around">
 
         <div class="col-4">
-          <div class="card">
+          <div class="card my-card-scrum">
             <div class="card-header bg-primary">
               <h3><span class="text-light">Waiting</span></h3>
             </div>
@@ -32,7 +30,7 @@
 
         <div class="col-4">
 
-          <div class="card">
+          <div class="card my-card-scrum">
             <div class="card-header bg-warning">
               <h3><span class="text-light">In Progress</span></h3>
             </div>
@@ -45,7 +43,7 @@
         </div>
 
         <div class="col-4">
-          <div class="card">
+          <div class="card my-card-scrum">
             <div class="card-header bg-success">
               <h3><span class="text-light">Done</span></h3>
             </div>
@@ -104,8 +102,22 @@ export default {
 </script>
 
 <style scoped>
+
+.manager {
+  background-image: url('https://i.imgur.com/o8xrgpA.jpg');
+  background-size: cover;
+  height: 100%;
+}
+
 .task {
   margin: 10px 0;
   border-radius: 2px;
 }
+
+.my-card-scrum {
+  background-color: rgba(0, 0, 0, 0.0) !important;
+  border-color: white;
+}
+
+
 </style>
