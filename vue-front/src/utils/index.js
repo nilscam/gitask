@@ -29,7 +29,7 @@ const randomUsersPictures = (nb) => {
     let gender = genderList[Math.round(Math.random())]
     let number = Math.floor(Math.random()*70)
 
-    list.append(`https://randomuser.me/api/portraits/${gender}/${number}.jpg`)
+    list.push(`https://randomuser.me/api/portraits/${gender}/${number}.jpg`)
   }
   return list
 };
