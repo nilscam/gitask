@@ -3,6 +3,18 @@
     app
     >
 
+    <v-flex xs12 sm6 lg3>
+          <v-text-field
+            class="my-search-bar"
+            color="#364F6B"
+            label="Append"
+            append-icon="search"
+            single-line
+            placeholder="Search"
+            solo>
+          </v-text-field>
+    </v-flex>
+
     <v-spacer></v-spacer>
 
     <v-menu offset-y origin="center center" class="elelvation-1 icons" :nudge-bottom="14" transition="scale-transition">
@@ -94,11 +106,27 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .icons {
   margin-left: 10px;
   margin-right: 10px;
 }
+.my-search-bar {
+  margin-top: 5px !important;
+}
+.v-input__control {
+  min-height: 32px !important;
+  max-width: 230px !important;
+}
+.v-input__slot {
+  border-radius: 50px !important;
+  box-shadow: 0px 0px 15px rgba(20, 68, 121, 0.283684) !important;
+}
+.v-text-field__slot {
+  margin-left: 10px;
+}
+
+
 .my-dropdown:focus, .my-dropdown:focus{
     outline: none;
 }
