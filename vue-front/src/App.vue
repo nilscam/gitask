@@ -5,7 +5,8 @@
       <NavDrawer></NavDrawer>
       <Header/>
       <v-content id="nav">
-        <transition :name="transitionName" mode="out-in">
+        <transition name="fade" mode="out-in">
+        <!-- <transition :name="transitionName" mode="out-in"> -->
           <router-view/>
         </transition>
       </v-content>
@@ -80,6 +81,13 @@ export default {
 }
 .slide-left-leave-to {
   transform: translate(50%, 0);
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s ease-in-out;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 

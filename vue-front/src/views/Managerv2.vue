@@ -16,7 +16,13 @@
                                         <div class="cardTitle">{{card.title}}</div>
                                         <div class="cardDescription">{{card.description}}</div>
                                         <div class="iconCenter">
-                                            <span class="iconPad">ADD TAG</span>
+                                            <span class="iconPad">
+                                              <v-btn round outline color="teal" class="btn-langage">
+                                                <span class="name-langage"># Vuejs</span>
+                                                <div style="width:5px;"></div>
+                                                <img alt="Vue logo" src="../assets/logo.png" class="logo-langage">
+                                              </v-btn>
+                                            </span>
                                             <i class="material-icons iconsAlign">
                                                 schedule
                                             </i>
@@ -52,7 +58,13 @@
                                         <div class="cardTitle">{{card.title}}</div>
                                         <div class="cardDescription">{{card.description}}</div>
                                         <div class="iconCenter">
-                                            <span class="iconPad">ADD TAG</span>
+                                            <span class="iconPad">
+                                              <v-btn round outline color="teal" class="btn-langage">
+                                                <span class="name-langage"># Vuejs</span>
+                                                <div style="width:5px;"></div>
+                                                <img alt="Vue logo" src="../assets/logo.png" class="logo-langage">
+                                              </v-btn>
+                                            </span>
                                             <i class="material-icons iconsAlign">
                                                 schedule
                                             </i>
@@ -86,7 +98,13 @@
                                         <div class="cardTitle">{{card.title}}</div>
                                         <div class="cardDescription">{{card.description}}</div>
                                         <div class="iconCenter">
-                                            <span class="iconPad">ADD TAG</span>
+                                            <span class="iconPad">
+                                              <v-btn round outline color="teal" class="btn-langage">
+                                                <span class="name-langage"># Vuejs</span>
+                                                <div style="width:5px;"></div>
+                                                <img alt="Vue logo" src="../assets/logo.png" class="logo-langage">
+                                              </v-btn>
+                                            </span>
                                             <i class="material-icons iconsAlign">
                                                 schedule
                                             </i>
@@ -209,6 +227,21 @@
         padding-right: 8px;
         padding-bottom: 17px;
         padding-top: 8px;
+    }
+
+    .btn-langage {
+      margin-top: 16px;
+      height: 27px !important;
+      padding-left: 11px !important;
+      padding-right: 11px !important;
+    }
+    .name-langage {
+      font-size: 12px;
+      color: #5EA3A3;
+    }
+    .logo-langage {
+      height: 15px;
+      width: 15px;
     }
 
 </style>
