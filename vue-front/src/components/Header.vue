@@ -1,7 +1,5 @@
 <template>
-  <v-toolbar
-    app
-    >
+  <v-toolbar fixed app>
 
     <v-flex xs12 sm6 lg3>
           <v-text-field
@@ -30,7 +28,7 @@
     <v-menu offset-y origin="center center" :nudge-bottom="10" transition="scale-transition">
       <v-btn icon large flat slot="activator" class="my-dropdown">
         <v-avatar size="30px">
-          <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="Michael Wang"/>
+          <img :src="randomUsers[0]"/>
         </v-avatar>
       </v-btn>
       <v-list class="pa-0">
@@ -52,12 +50,14 @@
 import NotificationList from './NotificationList';
 //import Idea from "../assets/idea.svg";
 import Computer from "../assets/computer.svg";
+import utils from "../utils";
 
 export default {
   components: {
     NotificationList
   },
   data: () => ({
+    randomUsers: utils.randomUsersPictures(1),
     showSearchBar: true,
     items: [
       {

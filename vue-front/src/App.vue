@@ -4,11 +4,6 @@
       <!-- <Header></Header> -->
       <NavDrawer></NavDrawer>
       <Header/>
-
-      <div>
-        <router-link to="/worker">Worker</router-link> |
-        <router-link to="/manager">Manager</router-link>
-      </div>
       <v-content id="nav">
         <transition :name="transitionName" mode="out-in">
           <router-view/>
@@ -48,7 +43,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 #nav {
