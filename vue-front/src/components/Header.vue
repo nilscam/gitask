@@ -1,50 +1,34 @@
 <template>
-  <v-toolbar
-    color="blue-grey darken-4"
-    dark
-    app
-    >
+  <v-toolbar fixed app>
 
-    <img :src="computeLogo" height="36" alt="">
-    <v-toolbar-title class="ml-0 pl-3">
-      <span class="hidden-sm-and-down">GiTask Developper</span>
-    </v-toolbar-title>
-
-    <v-text-field
-      flat
-      solo
-      light
-      color="white"
-      prepend-icon="search"
-      label="Search"
-      class="hidden-sm-and-down textbar"
-      >
-      </v-text-field>
+    <v-flex xs12 sm6 lg3>
+          <v-text-field
+            class="my-search-bar"
+            color="#364F6B"
+            label="Append"
+            append-icon="search"
+            single-line
+            placeholder="Search"
+            solo>
+          </v-text-field>
+    </v-flex>
 
     <v-spacer></v-spacer>
 
     <v-menu offset-y origin="center center" class="elelvation-1 icons" :nudge-bottom="14" transition="scale-transition">
-      <v-btn icon flat slot="activator">
-        <v-badge color="red" overlap>
+      <v-btn icon flat slot="activator" class="my-dropdown">
+        <v-badge color="red" overlap  >
           <span slot="badge">3</span>
-          <v-icon medium>notifications</v-icon>
+          <v-icon medium color="#364F6B">notifications</v-icon>
         </v-badge>
       </v-btn>
       <notification-list></notification-list>
     </v-menu>
 
-
-    <div class="cash icons" @click="cashMoney()">
-      <span style="fontSize: 18px">0,00</span>
-      <v-btn icon>
-          <v-icon medium>monetization_on</v-icon>
-      </v-btn>
-    </div>
-
     <v-menu offset-y origin="center center" :nudge-bottom="10" transition="scale-transition">
-      <v-btn icon large flat slot="activator">
+      <v-btn icon large flat slot="activator" class="my-dropdown">
         <v-avatar size="30px">
-          <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="Michael Wang"/>
+          <img :src="randomUsers[0]"/>
         </v-avatar>
       </v-btn>
       <v-list class="pa-0">
@@ -66,12 +50,15 @@
 import NotificationList from './NotificationList';
 //import Idea from "../assets/idea.svg";
 import Computer from "../assets/computer.svg";
+import utils from "../utils";
 
 export default {
   components: {
     NotificationList
   },
   data: () => ({
+    randomUsers: utils.randomUsersPictures(1),
+    showSearchBar: true,
     items: [
       {
         icon: 'account_circle',
@@ -119,20 +106,29 @@ export default {
 };
 </script>
 
-<style scoped>
-.cash {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 15px;
-  cursor: pointer;
-}
-.textbar {
-  margin-top: 7px;
-  margin-left: 50px;
-}
+<style>
 .icons {
   margin-left: 10px;
   margin-right: 10px;
 }
+.my-search-bar {
+  margin-top: 5px !important;
+}
+.v-input__control {
+  min-height: 32px !important;
+  max-width: 230px !important;
+}
+.v-input__slot {
+  border-radius: 50px !important;
+  box-shadow: 0px 0px 15px rgba(20, 68, 121, 0.283684) !important;
+}
+.v-text-field__slot {
+  margin-left: 10px;
+}
+
+
+.my-dropdown:focus, .my-dropdown:focus{
+    outline: none;
+}
+
 </style>
