@@ -22,8 +22,8 @@ export default new Router({
       component: () => import('./views/Flow.vue')
     },
     {
-      path: '/manager',
-      name: 'manager',
+      path: '/dashboard',
+      name: 'dashboard',
       component: () => import('./views/Managerv2.vue'),
     },
     {
