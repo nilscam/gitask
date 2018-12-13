@@ -24,7 +24,7 @@ export default new Router({
     {
       path: '/manager',
       name: 'manager',
-      component: () => import('./views/Manager.vue'),
+      component: () => import('./views/Managerv2.vue'),
     },
     {
       path: '/dashboard/:project',
