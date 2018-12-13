@@ -8,7 +8,6 @@
                 <div class="listBorder">
                 <v-layout row wrap class="max">
                     <v-flex v-for="card in cards"
-                            :key="card.title"
                             lg12>
                         <v-card>
                             <v-card-title primary-title>
