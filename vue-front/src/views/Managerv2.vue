@@ -188,6 +188,10 @@
         padding: 35px;
     }
 
+    .material-icons {
+        color: #364F6B
+    }
+
     .addButton {
         border-radius: 0px 0px 10px 10px;
         text-transform: none !important;
