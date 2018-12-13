@@ -3,7 +3,7 @@
     <v-app class="app">
       <!-- <Header></Header> -->
       <NavDrawer></NavDrawer>
-      <Headerv2/>
+      <Header/>
 
       <div>
         <router-link to="/worker">Worker</router-link> |
@@ -21,14 +21,12 @@
 <script>
 
 import Header from './components/Header'
-import Headerv2 from './components/Headerv2'
 import NavDrawer from './components/NavDrawer'
 
 export default {
   components: {
     Header,
-    NavDrawer,
-    Headerv2
+    NavDrawer
   },
   data: () => ({
     transitionName: 'slide-right'
@@ -53,6 +51,9 @@ export default {
   margin-top: 60px;
 }
 
+#nav {
+  background-color: #EBF0F6;
+}
 
 
 

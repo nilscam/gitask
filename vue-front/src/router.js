@@ -17,9 +17,9 @@ export default new Router({
       component: () => import('./views/About.vue')
     },
     {
-      path: '/worker',
-      name: 'worker',
-      component: () => import('./views/Worker.vue')
+      path: '/flow',
+      name: 'flow',
+      component: () => import('./views/Flow.vue')
     },
     {
       path: '/manager',
