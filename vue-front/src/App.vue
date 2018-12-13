@@ -1,16 +1,19 @@
 <template>
   <div id="appRoot">
     <v-app class="app">
-      <Header></Header>
+      <!-- <Header></Header> -->
       <NavDrawer></NavDrawer>
+      <Headerv2/>
 
-      <div id="nav">
+      <div>
         <router-link to="/worker">Worker</router-link> |
         <router-link to="/manager">Manager</router-link>
       </div>
-      <transition :name="transitionName" mode="out-in">
-        <router-view/>
-      </transition>
+      <v-content id="nav">
+        <transition :name="transitionName" mode="out-in">
+          <router-view/>
+        </transition>
+      </v-content>
     </v-app>
   </div>
 </template>
@@ -18,12 +21,14 @@
 <script>
 
 import Header from './components/Header'
+import Headerv2 from './components/Headerv2'
 import NavDrawer from './components/NavDrawer'
 
 export default {
   components: {
     Header,
-    NavDrawer
+    NavDrawer,
+    Headerv2
   },
   data: () => ({
     transitionName: 'slide-right'
