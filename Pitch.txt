@@ -1,0 +1,48 @@
+
+* Etat Des lieux
+
+Dev ont de moins en moins envie d’etre salarie et cherche de plus en plus d’independance (freelance),
+plus d’un quart des dev en France sont des freelances (on parle meme pas des states).
+
+Le service de statistiques du Ministère du travail anticipe que d’ici à 2020 le
+nombre de postes qui risquent d’être non pourvus dans le numérique sera de 50 000.
+
+Les entreprises ne cherchent pas juste des développeurs mais des bons développeurs
+
+
+« Quand je recrute un développeur, c’est moi qui passe l’entretien d’embauche ! témoigne le dirigeant. Salaire, horaires, ambiance forcément “cool”…
+je dois faire l’article pour attirer ces jeunes qui ont le choix entre dix offres d’emploi. »
+
+Cesser de juger sur diplôme systématiquement.
+Cesser d’exiger une expertise dans une techno trop précise.
+
+
+* Vision
+
+
+
+
+-Pour commencer, je vais vous parler un peu du monde du numérique en France.
+
+-Ajd, en tant que développeurs, nous sommes des rois. Nous sommes des rois car en France il y a plus de postes à pourvoir que de développeurs pour y répondre
+et la tendance s'accélère. Le Ministère du travail nous dit qu'en 2020, il risque d'y avoir 50 000 postes à pourvoir dans le monde du développement.
+
+-A côté de ça, une grande partie d'entre nous a de moins en moins envie d'être un simple salarié et nous recherchons de plus en plus l'indépendance.
+Pour vous donner une idée, aujourd'hui plus d'un quart des développeurs sont en freelance.
+
+
+-Du coup, vu qu'on est directement concerné, on aimerait mieux répartir le travail des développeurs dans le monde.
+
+
+
+
+
+
+
+- Ajd en france, les développeurs nous sommes des rois. Il y a plus de postes à pourvoir que de développeurs et la tendance s'accélère,Le service de
+statistiques du Ministère du travail anticipe que d’ici à 2020 le nombre de postes qui risquent d’être non pourvus dans le numérique sera de 50 000.
+
+- Les dev ont de moins en moins envie d’etre salarie et cherche de plus en plus d’independance (freelance),plus d’un quart des dev en France
+sont des freelances (on parle meme pas des states).
+
+- Notre vison est Equilibrer la charge de travail des dev dans le monde
