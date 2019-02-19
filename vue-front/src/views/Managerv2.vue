@@ -1,9 +1,8 @@
 <template>
-    <v-container
-            fluid
-            grid-list-lg>
+    <v-container fluid grid-list-lg>
         <v-layout row wrap class="main">
-            <v-flex lg4>
+
+            <!-- <v-flex lg4>
                 <h4 class="title">New Tasks</h4>
                 <div class="listBorder">
                     <v-layout row wrap>
@@ -33,7 +32,7 @@
                                                 monetization_on
                                             </i>
                                             <span class="iconPad">
-                                        {{card.cost}}
+                                        {{card.amount}}
                                             </span>
                                         </div>
                                     </v-flex>
@@ -109,7 +108,7 @@
                                                 schedule
                                             </i>
                                             <span class="iconPad">
-                                        {{card.date}}
+                                              15 dec
                                             </span>
                                             <i class="material-icons iconsAlign">
                                                 monetization_on
@@ -124,6 +123,41 @@
                         </v-flex>
                     </v-layout>
                 </div>
+            </v-flex> -->
+
+
+            <v-flex lg4>
+                <h4 class="title">New Tasks</h4>
+                <div class="listBorder">
+                    <v-layout row wrap>
+                        <v-flex v-for="card in newTasks" lg12>
+                          <TaskCard :card="card"/>
+                        </v-flex>
+                    </v-layout>
+                </div>
+                <v-btn block color="#364F6B" large="18px" class="addButton">Create New Task</v-btn>
+            </v-flex>
+
+            <v-flex lg4>
+                <h4 class="title">In progress</h4>
+                <div class="listBorder heightBorder">
+                    <v-layout row wrap>
+                        <v-flex v-for="card in progressTasks" lg12>
+                          <TaskCard :card="card"/>
+                        </v-flex>
+                    </v-layout>
+                </div>
+            </v-flex>
+
+            <v-flex lg4>
+                <h4 class="title">Done</h4>
+                <div class="listBorder heightBorder">
+                    <v-layout row wrap>
+                        <v-flex v-for="card in doneTasks" lg12>
+                          <TaskCard :card="card"/>
+                        </v-flex>
+                    </v-layout>
+                </div>
             </v-flex>
 
         </v-layout>
@@ -131,23 +165,35 @@
 </template>
 
 <script>
-    export default {
-        data: () => ({
-            newTasks: [
-                { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
-                { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
-                { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
-            ],
-            progressTasks: [
-                { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
-                { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
-            ],
-            doneTasks: [
-                { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
-                { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
-            ]
-        })
-    }
+import tasks from '../fakedata/tasks.js'
+import TaskCard from '../components/TaskCardv2'
+
+export default {
+  components: {
+    TaskCard
+  },
+  data: () => ({
+    // newTasks: [
+    //     { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
+    //     { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
+    //     { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
+    // ],
+    // progressTasks: [
+    //     { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
+    //     { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
+    // ],
+    // doneTasks: [
+    //     { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
+    //     { title: 'Fix vue Js', description: "Lorem ipsum dolor sit amet, consectetuer adipiscing …", date: '15 dec', cost: '25$'},
+    // ]
+    tasks
+  }),
+  computed: {
+    newTasks: () => tasks.filter(task => task.status == 'waiting'),
+    progressTasks: () => tasks.filter(task => task.status == 'progress'),
+    doneTasks: () => tasks.filter(task => task.status == 'done')
+  }
+}
 </script>
 
 <style scoped>

@@ -12,11 +12,11 @@
 
 
     <v-layout row justify-center wrap class="my-layout-content">
-          <v-flex v-for="i in 10" md5 sm12 ma-4>
+          <v-flex v-for="task in tasks" md5 sm12 ma-4>
             <v-card class="my-class-card">
 
               <v-card-title primary-title>
-                  <div class="headline my-title">Fix front Vuejs<span class="task-author">by Marc Vlotarde</span></div>
+                  <div class="headline my-title">{{ task.title }}<span class="task-author">by Marc Vlotarde</span></div>
                   <v-spacer></v-spacer>
                   <div class="triangle-left"></div>
                   <div class="my-date-limit">
@@ -34,7 +34,7 @@
                     <img alt="Vue logo" src="../assets/logo.png" class="logo-langage">
                   </v-btn>
                   <v-spacer></v-spacer>
-                  <span class="price-text">25 $</span>
+                  <span class="price-text">{{task.amount}} $</span>
                 </v-card-title>
 
             </v-card>
@@ -44,9 +44,12 @@
 </template>
 
 <script>
+import tasks from '../fakedata/tasks'
+
 export default {
   data () {
     return {
+      tasks,
       activeFilter: 'New',
       filters: [
         { name: 'New', onClick: this.handleNew },

@@ -1,12 +1,12 @@
 <template>
   <div id="appRoot">
+    <!-- <Landing/> -->
+
     <v-app class="app">
-      <!-- <Header></Header> -->
       <NavDrawer></NavDrawer>
       <Header/>
       <v-content id="nav">
         <transition name="fade" mode="out-in">
-        <!-- <transition :name="transitionName" mode="out-in"> -->
           <router-view/>
         </transition>
       </v-content>
@@ -18,11 +18,13 @@
 
 import Header from './components/Header'
 import NavDrawer from './components/NavDrawer'
+import Landing from './views/Landing'
 
 export default {
   components: {
     Header,
-    NavDrawer
+    NavDrawer,
+    Landing
   },
   data: () => ({
     transitionName: 'slide-right'
@@ -85,7 +87,7 @@ export default {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .3s ease-in-out;
+  transition: opacity .2s ease-in-out;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
